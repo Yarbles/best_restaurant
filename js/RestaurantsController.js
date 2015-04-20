@@ -5,6 +5,8 @@ bestRestaurants.controller('RestaurantsCtrl', function RestaurantsCtrl($scope) {
         { name: "Wendy's", type: "fast food", price: "$$" },
         { name: "Olive Garden", type: "Italian", price: "$$" },
         { name: "Stuckey's", type: "diner", price: "$$$" },
-        { name: "Hooters", type: "classy", price: "$$$$" }
+        { name: "Hooters", type: "classy", price: "$$$$" },
+        { name: "Andy's", type: "Shitty", price: "$" },
+        { name: "Ansy's", type: "Mexican", price: "$$" }
     ]
 });

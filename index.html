@@ -11,16 +11,31 @@
         <div class="container" ng-controller="RestaurantsCtrl">
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Search Restaurants</h4>
+                    <h4>Filter Restaurants</h4>
                     <form class="form-inline" role="form">
                         <div class="form-group">
-                            <input ng-model="query" type="text" class="form-control" placeholder="$$$$">
+                            <input ng-model="query" type="text" class="form-control" placeholder="Search">
                         </div>
                     </form>
                 </div>
             </div>
 
-            <div class="row">
+            <table class="flexible-restaurant-list">
+                <h4>Restaurant List</h4>
+                <tr>
+                    <th><a href="" ng-click="predicate = 'name'; reverse=false">Name</a>
+                        (<a href="" ng-click="predicate = '-name'; reverse=false">^</a>)</th>
+                    <th><a href="" ng-click="predicate = 'type'; reverse=!reverse">Type</a></th>
+                    <th><a href="" ng-click="predicate = 'price'; reverse=!reverse">Price</a></th>
+                </tr>
+                <tr ng-repeat="item in filtered = (restaurants | filter:query) | orderBy:predicate:reverse">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.type }}</td>
+                    <td>{{ item.price }}</td>
+                </tr>
+            </table>
+
+            <!-- <div class="row">
                 <div class="col-md-12">
                     <h4>Restaurant List</h4>
                     <ul>
@@ -31,13 +46,7 @@
                         </li>
                     </ul>
                 </div>
-                <!-- <div class='col-md-4'>
-                    <h2>New Restaurant</h2>
-                    <form ng-submit='addRestaurant()' class='form-inline' form='form'>
-
-                    </form>
-                </div> -->
-            </div>
+            </div> -->
         </div>
     </body>
 </html>
