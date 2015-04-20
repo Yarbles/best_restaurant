@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en" ng-app="bestRestaurants">
+    <head>
+        <title>The Best Restaurants in Portland</title>
+        <script src="lib/angular.js"></script>
+        <script src="app.js"></script>
+        <script src="js/RestaurantsController.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container" ng-controller="RestaurantsCtrl">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Restaurants</h2>
+                    <ul>
+                    <li ng-repeat="item in restaurants">
+                        {{item.name}}
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
