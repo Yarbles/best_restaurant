@@ -11,13 +11,32 @@
         <div class="container" ng-controller="RestaurantsCtrl">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Restaurants</h2>
+                    <h4>Search Restaurants</h4>
+                    <form class="form-inline" role="form">
+                        <div class="form-group">
+                            <input ng-model="query" type="text" class="form-control" placeholder="$$$$">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Restaurant List</h4>
                     <ul>
-                    <li ng-repeat="item in restaurants">
-                        {{item.name}}
-                    </li>
+                        <li ng-repeat="item in filtered = (restaurants | filter:query)">
+                            {{item.name}} -
+                            {{item.type}} -
+                            {{item.price}}
+                        </li>
                     </ul>
                 </div>
+                <!-- <div class='col-md-4'>
+                    <h2>New Restaurant</h2>
+                    <form ng-submit='addRestaurant()' class='form-inline' form='form'>
+
+                    </form>
+                </div> -->
             </div>
         </div>
     </body>
